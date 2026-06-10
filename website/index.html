@@ -103,6 +103,75 @@ line-height:1.8;
 color:#7CFC00;
 }
 h2{margin-bottom:15px}
+.bio-card{
+margin:20px auto;
+max-width:750px;
+padding:22px;
+border-radius:20px;
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(0,255,238,.25);
+backdrop-filter:blur(15px);
+box-shadow:
+0 0 20px rgba(0,255,238,.15),
+inset 0 0 20px rgba(255,255,255,.05);
+}
+
+.bio-card h3{
+font-size:1.5rem;
+letter-spacing:3px;
+color:#00ffee;
+margin-bottom:12px;
+text-shadow:
+0 0 10px #00ffee,
+0 0 25px #00ffee;
+}
+
+.student-info{
+margin-bottom:15px;
+font-size:1rem;
+font-weight:600;
+color:white;
+}
+
+.college-link{
+display:inline-block;
+padding:14px 28px;
+text-decoration:none;
+color:white;
+font-weight:700;
+border-radius:50px;
+
+background:linear-gradient(
+135deg,
+#00ffee,
+#0099ff,
+#7b2ff7
+);
+
+background-size:300% 300%;
+
+box-shadow:
+0 0 15px #00ffee,
+0 0 35px rgba(0,255,238,.4);
+
+transition:.4s ease;
+animation:glowMove 5s linear infinite;
+}
+
+.college-link:hover{
+transform:translateY(-4px) scale(1.05);
+
+box-shadow:
+0 0 25px #00ffee,
+0 0 50px #00ffee,
+0 0 80px rgba(0,255,238,.6);
+}
+
+@keyframes glowMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
 footer{
 text-align:center;
 padding:20px;
@@ -127,8 +196,25 @@ color:#94a3b8;
 
 <h1 id="name"></h1>
 
-<div id="role" class="typing"></div>
+<div class="bio-card">
 
+<h3>NITIN LAYEK</h3>
+
+<div class="student-info">
+🎓 2nd Year Student
+</div>
+
+<a href="https://jgec.ac.in/"
+target="_blank"
+class="college-link">
+
+🏛 Jalpaiguri Government Engineering College
+
+</a>
+
+</div>
+
+<div id="role" class="typing"></div>
 <div class="links">
 
 <a href="https://www.instagram.com/nitin_layek/" target="_blank"><i class="fab fa-instagram"></i>Instagram</a>
