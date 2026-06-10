@@ -1,326 +1,268 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nitin Layek | Portfolio</title>
+<title>Nitin Layek</title>
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-}
-
+*{margin:0;padding:0;box-sizing:border-box}
 body{
-    min-height:100vh;
-    background:linear-gradient(135deg,#0f172a,#1e293b,#334155);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:20px;
-    color:white;
+background:#020617;
+font-family:Consolas,monospace;
+color:#00ffee;
+overflow-x:hidden;
 }
-
+#matrix{
+position:fixed;
+top:0;left:0;
+width:100%;
+height:100%;
+z-index:-1;
+}
+.hidden{display:none}
+.boot{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+font-size:1.2rem;
+padding:20px;
+}
+.glow{
+text-shadow:0 0 10px #00ffee,0 0 25px #00ffee;
+}
 .container{
-    width:100%;
-    max-width:1000px;
-    background:rgba(255,255,255,0.08);
-    backdrop-filter:blur(15px);
-    border-radius:25px;
-    padding:40px;
-    text-align:center;
-    box-shadow:0 8px 32px rgba(0,0,0,.3);
-    animation:fadeIn 1s ease;
+max-width:1200px;
+margin:auto;
+padding:30px;
 }
-
-@keyframes fadeIn{
-    from{
-        opacity:0;
-        transform:translateY(20px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
+.hero,.section{
+background:rgba(255,255,255,.04);
+backdrop-filter:blur(12px);
+border:1px solid rgba(0,255,238,.15);
+border-radius:20px;
+padding:30px;
+margin-bottom:30px;
 }
-
-.profile-img{
-    width:150px;
-    height:150px;
-    border-radius:50%;
-    object-fit:cover;
-    border:4px solid #38bdf8;
-    margin-bottom:20px;
+.hero{text-align:center}
+.profile{
+width:220px;height:220px;
+border-radius:50%;
+border:4px solid #00ffee;
+box-shadow:0 0 30px #00ffee;
+animation:float 4s ease-in-out infinite;
+object-fit:cover;
 }
-
+@keyframes float{
+50%{transform:translateY(-10px)}
+}
 h1{
-    font-size:3rem;
-    background:linear-gradient(90deg,#38bdf8,#a855f7);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
+font-size:4rem;
+margin-top:20px;
+text-shadow:0 0 20px #00ffee;
 }
-
-.subtitle{
-    color:#cbd5e1;
-    margin-top:10px;
-    margin-bottom:30px;
+.typing{
+margin-top:15px;
+min-height:35px;
+font-size:1.3rem;
 }
-
 .links{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:15px;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:15px;
+margin-top:30px;
 }
-
 .links a{
-    text-decoration:none;
-    color:white;
-    padding:16px;
-    border-radius:15px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:10px;
-    font-weight:600;
-    transition:.3s;
+text-decoration:none;
+color:white;
+padding:14px 22px;
+border-radius:12px;
+border:1px solid rgba(0,255,238,.4);
+background:rgba(255,255,255,.05);
+transition:.4s;
+font-weight:600;
 }
-
 .links a i{
-    font-size:22px;
+margin-right:8px;
+font-size:18px;
 }
-
 .links a:hover{
-    transform:translateY(-5px) scale(1.03);
+transform:translateY(-5px) scale(1.05);
+box-shadow:0 0 25px #00ffee;
+background:#00ffee;
+color:black;
 }
-
-/* Social Colors */
-
-.instagram{
-    background:linear-gradient(
-    45deg,
-    #f09433,
-    #e6683c,
-    #dc2743,
-    #cc2366,
-    #bc1888);
+.codebox{
+white-space:pre-wrap;
+line-height:1.8;
+color:#7CFC00;
 }
-
-.linkedin{
-    background:#0077B5;
-}
-
-.facebook{
-    background:#1877F2;
-}
-
-.github{
-    background:#24292e;
-}
-
-.leetcode{
-    background:#FFA116;
-    color:black !important;
-}
-
-.codeforces{
-    background:#000000;
-}
-
-.whatsapp{
-    background:#25D366;
-}
-
-.phone{
-    background:#16a34a;
-}
-
-.email{
-    background:linear-gradient(
-    45deg,
-    #EA4335,
-    #FFFFFF);
-    color:black !important;
-}
-
-.about{
-    margin-top:35px;
-    padding:25px;
-    border-radius:15px;
-    background:rgba(255,255,255,0.05);
-}
-
-.about h2{
-    margin-bottom:10px;
-}
-
-.about p{
-    line-height:1.8;
-    color:#dbeafe;
-}
-
-button{
-    margin-top:25px;
-    padding:12px 25px;
-    border:none;
-    border-radius:30px;
-    background:#a855f7;
-    color:white;
-    cursor:pointer;
-    font-size:1rem;
-    transition:.3s;
-}
-
-button:hover{
-    transform:scale(1.05);
-}
-
-#quote{
-    margin-top:20px;
-    color:#38bdf8;
-    font-style:italic;
-}
-
+h2{margin-bottom:15px}
 footer{
-    margin-top:35px;
-    color:#94a3b8;
+text-align:center;
+padding:20px;
+color:#94a3b8;
 }
-
 </style>
 </head>
-
 <body>
 
+<canvas id="matrix"></canvas>
+
+<div id="boot" class="boot">
+<div class="glow" id="bootText"></div>
+</div>
+
+<div id="site" class="hidden">
 <div class="container">
 
-    <!-- Replace profile.jpg with your image -->
-    <img src="profile.jpg"
-    alt="Nitin Layek"
-    class="profile-img">
+<div class="hero">
 
-    <h1>Nitin Layek</h1>
+<img src="profile.jpg" class="profile">
 
-    <p class="subtitle">
-        Web Developer • C++ Learner • Future Software Engineer
-    </p>
+<h1 id="name"></h1>
 
-    <div class="links">
+<div id="role" class="typing"></div>
 
-        <a class="instagram"
-        href="https://www.instagram.com/nitin_layek/"
-        target="_blank">
-            <i class="fa-brands fa-instagram"></i>
-            Instagram
-        </a>
+<div class="links">
 
-        <a class="linkedin"
-        href="https://www.linkedin.com/in/nitin-layek-97a20a38a/"
-        target="_blank">
-            <i class="fa-brands fa-linkedin"></i>
-            LinkedIn
-        </a>
+<a href="https://www.instagram.com/nitin_layek/" target="_blank"><i class="fab fa-instagram"></i>Instagram</a>
 
-        <a class="facebook"
-        href="https://www.facebook.com/nitin.layek.918203"
-        target="_blank">
-            <i class="fa-brands fa-facebook"></i>
-            Facebook
-        </a>
+<a href="https://www.linkedin.com/in/nitin-layek-97a20a38a/" target="_blank"><i class="fab fa-linkedin"></i>LinkedIn</a>
 
-        <a class="github"
-        href="https://github.com/nitinlayek"
-        target="_blank">
-            <i class="fa-brands fa-github"></i>
-            GitHub
-        </a>
+<a href="https://www.facebook.com/nitin.layek.918203" target="_blank"><i class="fab fa-facebook"></i>Facebook</a>
 
-        <a class="leetcode"
-        href="https://leetcode.com/u/Nitin_layek07896/"
-        target="_blank">
-            <i class="fa-solid fa-code"></i>
-            LeetCode
-        </a>
+<a href="https://github.com/nitinlayek" target="_blank"><i class="fab fa-github"></i>GitHub</a>
 
-        <a class="codeforces"
-        href="https://codeforces.com/profile/NiTiN_LaYeK"
-        target="_blank">
-            <i class="fa-solid fa-laptop-code"></i>
-            Codeforces
-        </a>
+<a href="https://leetcode.com/u/Nitin_layek07896/" target="_blank"><i class="fas fa-code"></i>LeetCode</a>
 
-        <a class="whatsapp"
-        href="https://wa.me/917866062676"
-        target="_blank">
-            <i class="fa-brands fa-whatsapp"></i>
-            WhatsApp
-        </a>
+<a href="https://codeforces.com/profile/NiTiN_LaYeK" target="_blank"><i class="fas fa-laptop-code"></i>Codeforces</a>
 
-        <a class="phone"
-        href="tel:+917866062676">
-            <i class="fa-solid fa-phone"></i>
-            Call Me
-        </a>
+<a href="https://wa.me/917866062676" target="_blank"><i class="fab fa-whatsapp"></i>WhatsApp</a>
 
-        <a class="email"
-        href="mailto:yourmail@gmail.com">
-            <i class="fa-solid fa-envelope"></i>
-            Email Me
-        </a>
+<a href="tel:+917866062676"><i class="fas fa-phone"></i>Call Me</a>
 
-    </div>
-
-    <div class="about">
-        <h2>About Me</h2>
-
-        <p>
-            Hello! I'm Nitin Layek, a passionate learner currently
-            studying Web Development and C++. I enjoy building
-            websites, solving coding problems, and continuously
-            improving my skills. My goal is to become a successful
-            Software Engineer and create impactful projects.
-        </p>
-    </div>
-
-    <button onclick="showQuote()">
-        Get Motivation 🚀
-    </button>
-
-    <p id="quote"></p>
-
-    <footer>
-        ✨ Designed & Developed by Nitin Layek ✨
-    </footer>
+<a href="mailto:yourmail@gmail.com"><i class="fas fa-envelope"></i>Email Me</a>
 
 </div>
 
-<script>
+</div>
 
-const quotes = [
-"Success comes from consistency.",
-"Keep coding, keep growing.",
-"Dream big, work hard.",
-"Every expert was once a beginner.",
-"Small progress every day adds up.",
-"Your future is built by what you do today.",
-"Stay focused and never stop learning."
+<div class="section">
+<h2>> about_me.exe</h2>
+<div class="codebox" id="about"></div>
+</div>
+
+<div class="section">
+<h2>> skills.dll</h2>
+<div class="codebox" id="skills"></div>
+</div>
+
+<div class="section">
+<h2>> mission.txt</h2>
+<div class="codebox" id="mission"></div>
+</div>
+
+<footer>
+NITIN LAYEK
+</footer>
+
+</div>
+</div>
+
+<script>
+const canvas=document.getElementById("matrix");
+const ctx=canvas.getContext("2d");
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+const chars="01{}[]<>#include<iostream>;";
+const fontSize=14;
+const columns=canvas.width/fontSize;
+const drops=[];
+
+for(let i=0;i<columns;i++) drops[i]=1;
+
+function draw(){
+ctx.fillStyle="rgba(2,6,23,0.08)";
+ctx.fillRect(0,0,canvas.width,canvas.height);
+ctx.fillStyle="#00ffee";
+ctx.font=fontSize+"px monospace";
+
+for(let i=0;i<drops.length;i++){
+const text=chars[Math.floor(Math.random()*chars.length)];
+ctx.fillText(text,i*fontSize,drops[i]*fontSize);
+if(drops[i]*fontSize>canvas.height && Math.random()>0.98) drops[i]=0;
+drops[i]++;
+}
+}
+setInterval(draw,35);
+
+const lines=[
+"INITIALIZING AI PORTFOLIO...",
+"CONNECTING TO NITIN_LAYEK...",
+"AUTHENTICATION SUCCESSFUL",
+"WELCOME TO THE DIGITAL UNIVERSE"
 ];
 
-function showQuote(){
-    let random =
-    quotes[Math.floor(Math.random()*quotes.length)];
+let x=0;
 
-    document.getElementById("quote").innerText =
-    random;
+function boot(){
+if(x<lines.length){
+document.getElementById("bootText").innerHTML+=lines[x]+"<br>";
+x++;
+setTimeout(boot,250);
+}else{
+setTimeout(()=>{
+document.getElementById("boot").style.display="none";
+document.getElementById("site").classList.remove("hidden");
+startTyping();
+},300);
+}
+}
+boot();
+
+function type(id,text,speed){
+let i=0;
+const el=document.getElementById(id);
+const t=setInterval(()=>{
+el.innerHTML+=text.charAt(i);
+i++;
+if(i>=text.length) clearInterval(t);
+},speed);
 }
 
+function startTyping(){
+type("name","NITIN LAYEK",35);
+
+setTimeout(()=>{
+type("role","Web Developer | C++ Learner | Future Software Engineer",20);
+},600);
+
+setTimeout(()=>{
+type("about",
+"> Passionate learner exploring Web Development and C++.\n> Building websites.\n> Solving coding problems.\n> Growing every day.",
+12);
+},1800);
+
+setTimeout(()=>{
+type("skills",
+"✓ HTML\n✓ CSS\n✓ JavaScript\n✓ C++\n✓ GitHub\n✓ Responsive Design",
+12);
+},3500);
+
+setTimeout(()=>{
+type("mission",
+"Goal: Become a world-class Software Engineer and build impactful digital products.",
+12);
+},5000);
+}
 </script>
 
 </body>
 </html>
-```
