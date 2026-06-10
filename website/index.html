@@ -1,22 +1,326 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>nitin layek</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nitin Layek | Portfolio</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:linear-gradient(135deg,#0f172a,#1e293b,#334155);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+    color:white;
+}
+
+.container{
+    width:100%;
+    max-width:1000px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(15px);
+    border-radius:25px;
+    padding:40px;
+    text-align:center;
+    box-shadow:0 8px 32px rgba(0,0,0,.3);
+    animation:fadeIn 1s ease;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.profile-img{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid #38bdf8;
+    margin-bottom:20px;
+}
+
+h1{
+    font-size:3rem;
+    background:linear-gradient(90deg,#38bdf8,#a855f7);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.subtitle{
+    color:#cbd5e1;
+    margin-top:10px;
+    margin-bottom:30px;
+}
+
+.links{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+}
+
+.links a{
+    text-decoration:none;
+    color:white;
+    padding:16px;
+    border-radius:15px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.links a i{
+    font-size:22px;
+}
+
+.links a:hover{
+    transform:translateY(-5px) scale(1.03);
+}
+
+/* Social Colors */
+
+.instagram{
+    background:linear-gradient(
+    45deg,
+    #f09433,
+    #e6683c,
+    #dc2743,
+    #cc2366,
+    #bc1888);
+}
+
+.linkedin{
+    background:#0077B5;
+}
+
+.facebook{
+    background:#1877F2;
+}
+
+.github{
+    background:#24292e;
+}
+
+.leetcode{
+    background:#FFA116;
+    color:black !important;
+}
+
+.codeforces{
+    background:#000000;
+}
+
+.whatsapp{
+    background:#25D366;
+}
+
+.phone{
+    background:#16a34a;
+}
+
+.email{
+    background:linear-gradient(
+    45deg,
+    #EA4335,
+    #FFFFFF);
+    color:black !important;
+}
+
+.about{
+    margin-top:35px;
+    padding:25px;
+    border-radius:15px;
+    background:rgba(255,255,255,0.05);
+}
+
+.about h2{
+    margin-bottom:10px;
+}
+
+.about p{
+    line-height:1.8;
+    color:#dbeafe;
+}
+
+button{
+    margin-top:25px;
+    padding:12px 25px;
+    border:none;
+    border-radius:30px;
+    background:#a855f7;
+    color:white;
+    cursor:pointer;
+    font-size:1rem;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+#quote{
+    margin-top:20px;
+    color:#38bdf8;
+    font-style:italic;
+}
+
+footer{
+    margin-top:35px;
+    color:#94a3b8;
+}
+
+</style>
 </head>
 
 <body>
-    <h1>intro duction to html</h1>
-    <h2>intro duction to html</h2>
-    <h3>intro duction to html</h3>
-    <h4>intro duction to html</h4>
-    <h5>intro duction to html</h5>
-    <h6>intro duction to html</h6>
 
+<div class="container">
 
-    <p>this is a HTML VDO </p>
+    <!-- Replace profile.jpg with your image -->
+    <img src="profile.jpg"
+    alt="Nitin Layek"
+    class="profile-img">
+
+    <h1>Nitin Layek</h1>
+
+    <p class="subtitle">
+        Web Developer • C++ Learner • Future Software Engineer
+    </p>
+
+    <div class="links">
+
+        <a class="instagram"
+        href="https://www.instagram.com/nitin_layek/"
+        target="_blank">
+            <i class="fa-brands fa-instagram"></i>
+            Instagram
+        </a>
+
+        <a class="linkedin"
+        href="https://www.linkedin.com/in/nitin-layek-97a20a38a/"
+        target="_blank">
+            <i class="fa-brands fa-linkedin"></i>
+            LinkedIn
+        </a>
+
+        <a class="facebook"
+        href="https://www.facebook.com/nitin.layek.918203"
+        target="_blank">
+            <i class="fa-brands fa-facebook"></i>
+            Facebook
+        </a>
+
+        <a class="github"
+        href="https://github.com/nitinlayek"
+        target="_blank">
+            <i class="fa-brands fa-github"></i>
+            GitHub
+        </a>
+
+        <a class="leetcode"
+        href="https://leetcode.com/u/Nitin_layek07896/"
+        target="_blank">
+            <i class="fa-solid fa-code"></i>
+            LeetCode
+        </a>
+
+        <a class="codeforces"
+        href="https://codeforces.com/profile/NiTiN_LaYeK"
+        target="_blank">
+            <i class="fa-solid fa-laptop-code"></i>
+            Codeforces
+        </a>
+
+        <a class="whatsapp"
+        href="https://wa.me/917866062676"
+        target="_blank">
+            <i class="fa-brands fa-whatsapp"></i>
+            WhatsApp
+        </a>
+
+        <a class="phone"
+        href="tel:+917866062676">
+            <i class="fa-solid fa-phone"></i>
+            Call Me
+        </a>
+
+        <a class="email"
+        href="mailto:yourmail@gmail.com">
+            <i class="fa-solid fa-envelope"></i>
+            Email Me
+        </a>
+
+    </div>
+
+    <div class="about">
+        <h2>About Me</h2>
+
+        <p>
+            Hello! I'm Nitin Layek, a passionate learner currently
+            studying Web Development and C++. I enjoy building
+            websites, solving coding problems, and continuously
+            improving my skills. My goal is to become a successful
+            Software Engineer and create impactful projects.
+        </p>
+    </div>
+
+    <button onclick="showQuote()">
+        Get Motivation 🚀
+    </button>
+
+    <p id="quote"></p>
+
+    <footer>
+        ✨ Designed & Developed by Nitin Layek ✨
+    </footer>
+
+</div>
+
+<script>
+
+const quotes = [
+"Success comes from consistency.",
+"Keep coding, keep growing.",
+"Dream big, work hard.",
+"Every expert was once a beginner.",
+"Small progress every day adds up.",
+"Your future is built by what you do today.",
+"Stay focused and never stop learning."
+];
+
+function showQuote(){
+    let random =
+    quotes[Math.floor(Math.random()*quotes.length)];
+
+    document.getElementById("quote").innerText =
+    random;
+}
+
+</script>
+
 </body>
-
 </html>
+```
