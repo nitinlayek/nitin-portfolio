@@ -8,6 +8,190 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
+    .progress-box{
+display:flex;
+flex-direction:column;
+gap:25px;
+}
+
+.progress-item{
+padding:20px;
+background:rgba(255,255,255,.05);
+border-radius:15px;
+border:1px solid rgba(0,255,238,.15);
+}
+
+.progress-item h3{
+margin-bottom:10px;
+color:#00ffee;
+}
+
+.progress-item p{
+margin-bottom:12px;
+color:white;
+}
+
+.progress-bar{
+height:12px;
+background:#111827;
+border-radius:50px;
+overflow:hidden;
+}
+
+.progress-bar span{
+display:block;
+height:100%;
+border-radius:50px;
+background:linear-gradient(
+90deg,
+#00ffee,
+#00bfff,
+#7b2ff7
+);
+background-size:300% 300%;
+animation:progressGlow 4s linear infinite;
+}
+
+@keyframes progressGlow{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+    .contact-box{
+text-align:center;
+padding:30px;
+border-radius:20px;
+background:rgba(255,255,255,.05);
+border:1px solid rgba(0,255,238,.2);
+}
+
+.contact-box h3{
+font-size:2rem;
+margin-bottom:15px;
+color:#00ffee;
+text-shadow:0 0 15px #00ffee;
+}
+
+.contact-box p{
+color:white;
+margin-bottom:25px;
+line-height:1.8;
+}
+
+.contact-buttons{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:15px;
+}
+
+.contact-buttons a{
+text-decoration:none;
+padding:14px 22px;
+border-radius:12px;
+background:rgba(255,255,255,.05);
+border:1px solid rgba(0,255,238,.3);
+color:white;
+transition:.4s;
+font-weight:600;
+}
+
+.contact-buttons a:hover{
+background:#00ffee;
+color:black;
+box-shadow:0 0 25px #00ffee;
+transform:translateY(-5px);
+}
+  .hero{
+position:relative;
+overflow:hidden;
+border:1px solid rgba(255,0,0,0.3);
+}
+
+.hero::before{
+content:'';
+position:absolute;
+inset:-2px;
+background:linear-gradient(
+90deg,
+transparent,
+#ff0000,
+#ff4d4d,
+#ff0000,
+transparent
+);
+filter:blur(15px);
+animation:borderRun 4s linear infinite;
+z-index:-1;
+}
+
+@keyframes borderRun{
+0%{
+transform:translateX(-100%);
+}
+100%{
+transform:translateX(100%);
+}
+}
+    .skill{
+margin-bottom:25px;
+}
+
+.skill p{
+margin-bottom:8px;
+font-weight:bold;
+color:white;
+}
+
+.bar{
+height:12px;
+background:#111827;
+border-radius:50px;
+overflow:hidden;
+border:1px solid rgba(0,255,238,.2);
+}
+
+.bar span{
+display:block;
+height:100%;
+border-radius:50px;
+background:linear-gradient(
+90deg,
+#00ffee,
+#00bfff,
+#7b2ff7
+);
+background-size:300% 300%;
+animation:skillGlow 4s linear infinite;
+box-shadow:0 0 20px #00ffee;
+}
+
+@keyframes skillGlow{
+0%{
+background-position:0% 50%;
+}
+50%{
+background-position:100% 50%;
+}
+100%{
+background-position:0% 50%;
+}
+}
+   
+    #cursor-glow{
+position:fixed;
+width:30px;
+height:30px;
+background:radial-gradient(
+circle,
+rgba(0,255,238,0.25),
+transparent 70%
+);
+pointer-events:none;
+transform:translate(-50%,-50%);
+z-index:9999;
+}
 *{margin:0;padding:0;box-sizing:border-box}
 body{
 background:#020617;
@@ -42,7 +226,7 @@ padding:30px;
 }
 .hero,.section{
 background:rgba(255,255,255,.04);
-backdrop-filter:blur(12px);
+backdrop-filter:blur(6px);
 border:1px solid rgba(0,255,238,.15);
 border-radius:20px;
 padding:30px;
@@ -172,12 +356,103 @@ box-shadow:
 50%{background-position:100% 50%;}
 100%{background-position:0% 50%;}
 }
-footer{
+.footer{
+margin-top:50px;
+padding:50px 20px;
 text-align:center;
-padding:20px;
-color:#94a3b8;
+background:rgba(255,255,255,.03);
+backdrop-filter:blur(15px);
+border-top:1px solid rgba(0,255,238,.15);
 }
-</style>
+
+.footer h3{
+font-size:2rem;
+letter-spacing:4px;
+color:#00ffee;
+margin-bottom:10px;
+text-shadow:
+0 0 10px #00ffee,
+0 0 30px #00ffee;
+}
+
+.footer p{
+color:#cbd5e1;
+margin:10px 0;
+}
+
+.footer-social{
+display:flex;
+justify-content:center;
+gap:20px;
+margin:25px 0;
+}
+
+.footer-social a{
+width:55px;
+height:55px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+font-size:22px;
+text-decoration:none;
+color:#00ffee;
+border:1px solid rgba(0,255,238,.3);
+background:rgba(255,255,255,.04);
+transition:.4s;
+}
+
+.footer-social a:hover{
+transform:translateY(-8px) rotate(360deg);
+background:#00ffee;
+color:#020617;
+box-shadow:
+0 0 20px #00ffee,
+0 0 40px #00ffee;
+}
+
+.footer-line{
+width:250px;
+height:2px;
+margin:20px auto;
+background:linear-gradient(
+90deg,
+transparent,
+#00ffee,
+transparent
+);
+box-shadow:0 0 20px #00ffee;
+}
+
+.copyright{
+font-size:.9rem;
+letter-spacing:1px;
+opacity:.8;
+}
+.ai-btn{
+position:fixed;
+right:30px;
+bottom:30px;
+width:70px;
+height:70px;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:30px;
+text-decoration:none;
+border-radius:50%;
+background:#00ffee;
+color:black;
+box-shadow:0 0 30px #00ffee;
+z-index:10000;
+animation:floatBot 2s infinite;
+}
+
+@keyframes floatBot{
+50%{
+transform:translateY(-10px);
+}
+} </style>
 </head>
 <body>
 
@@ -246,7 +521,49 @@ class="college-link">
 
 <div class="section">
 <h2>> skills.dll</h2>
-<div class="codebox" id="skills"></div>
+
+<div class="skill">
+<p>HTML</p>
+<div class="bar">
+<span style="width:90%"></span>
+</div>
+</div>
+
+<div class="skill">
+<p>CSS</p>
+<div class="bar">
+<span style="width:85%"></span>
+</div>
+</div>
+
+<div class="skill">
+<p>JavaScript</p>
+<div class="bar">
+<span style="width:75%"></span>
+</div>
+</div>
+
+<div class="skill">
+<p>C++</p>
+<div class="bar">
+<span style="width:70%"></span>
+</div>
+</div>
+
+<div class="skill">
+<p>Git & GitHub</p>
+<div class="bar">
+<span style="width:80%"></span>
+</div>
+</div>
+
+<div class="skill">
+<p>Responsive Design</p>
+<div class="bar">
+<span style="width:85%"></span>
+</div>
+</div>
+
 </div>
 
 <div class="section">
@@ -254,8 +571,131 @@ class="college-link">
 <div class="codebox" id="mission"></div>
 </div>
 
-<footer>
-NITIN LAYEK
+<div class="section">
+    <h2>> system_time.exe</h2>
+
+    <div id="clock"
+    style="
+    font-size:2rem;
+    text-align:center;
+    font-weight:bold;
+    color:#00ffee;
+    text-shadow:0 0 15px #00ffee;
+    ">
+    </div>
+
+</div>
+
+<div class="section">
+<h2>> contact_me.exe</h2>
+
+<div class="contact-box">
+
+<h3>Let's Connect</h3>
+
+<p>
+Interested in working together, building projects,
+or discussing technology? Feel free to contact me.
+</p>
+
+<div class="contact-buttons">
+
+<a href="mailto:yourmail@gmail.com">
+<i class="fas fa-envelope"></i>
+Email Me
+</a>
+
+<a href="https://wa.me/917866062676" target="_blank">
+<i class="fab fa-whatsapp"></i>
+WhatsApp
+</a>
+
+<a href="https://www.linkedin.com/in/nitin-layek-97a20a38a/" target="_blank">
+<i class="fab fa-linkedin"></i>
+LinkedIn
+</a>
+
+</div>
+
+</div>
+</div>
+
+<div class="section">
+<h2>> current_progress.log</h2>
+
+<div class="progress-box">
+
+<div class="progress-item">
+<h3>🌐 Web Development</h3>
+<p>Currently learning HTML, CSS and JavaScript.</p>
+<div class="progress-bar">
+<span style="width:60%"></span>
+</div>
+</div>
+
+<div class="progress-item">
+<h3>💻 C++ Programming</h3>
+<p>Practicing problem solving and DSA fundamentals.</p>
+<div class="progress-bar">
+<span style="width:55%"></span>
+</div>
+</div>
+
+<div class="progress-item">
+<h3>🚀 Portfolio Development</h3>
+<p>Building and improving my personal portfolio website.</p>
+<div class="progress-bar">
+<span style="width:85%"></span>
+</div>
+</div>
+
+<div class="progress-item">
+<h3>📚 Software Engineering Journey</h3>
+<p>Working towards becoming a professional Software Engineer.</p>
+<div class="progress-bar">
+<span style="width:40%"></span>
+</div>
+</div>
+
+</div>
+</div>
+
+<footer class="footer">
+
+    <div class="footer-content">
+
+        <h3>NITIN LAYEK</h3>
+
+        <p>Web Developer • C++ Learner • Future Software Engineer</p>
+
+        <div class="footer-social">
+
+            <a href="https://github.com/nitinlayek" target="_blank">
+                <i class="fab fa-github"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/in/nitin-layek-97a20a38a/" target="_blank">
+                <i class="fab fa-linkedin"></i>
+            </a>
+
+            <a href="https://www.instagram.com/nitin_layek/" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+
+            <a href="mailto:yourmail@gmail.com">
+                <i class="fas fa-envelope"></i>
+            </a>
+
+        </div>
+
+        <div class="footer-line"></div>
+
+        <p class="copyright">
+            © 2026 Nitin Layek. All Rights Reserved.
+        </p>
+
+    </div>
+
 </footer>
 
 </div>
@@ -287,13 +727,14 @@ if(drops[i]*fontSize>canvas.height && Math.random()>0.98) drops[i]=0;
 drops[i]++;
 }
 }
-setInterval(draw,35);
+setInterval(draw,80);
 
 const lines=[
-"INITIALIZING AI PORTFOLIO...",
-"CONNECTING TO NITIN_LAYEK...",
-"AUTHENTICATION SUCCESSFUL",
-"WELCOME TO THE DIGITAL UNIVERSE"
+"[10%] INITIALIZING SYSTEM...",
+"[35%] CONNECTING TO SERVER...",
+"[65%] LOADING PORTFOLIO...",
+"[90%] AUTHENTICATION SUCCESSFUL...",
+"[100%] ACCESS GRANTED"
 ];
 
 let x=0;
@@ -336,11 +777,7 @@ type("about",
 12);
 },1800);
 
-setTimeout(()=>{
-type("skills",
-"✓ HTML\n✓ CSS\n✓ JavaScript\n✓ C++\n✓ GitHub\n✓ Responsive Design",
-12);
-},3500);
+
 
 setTimeout(()=>{
 type("mission",
@@ -348,7 +785,31 @@ type("mission",
 12);
 },5000);
 }
-</script>
+function updateClock(){
+    const now = new Date();
+
+    document.getElementById("clock").innerHTML =
+    now.toLocaleTimeString();
+}
+
+setInterval(updateClock,1000);
+updateClock();
+document.addEventListener("mousemove",(e)=>{
+
+const glow=document.getElementById("cursor-glow");
+
+glow.style.left=e.clientX+"px";
+glow.style.top=e.clientY+"px";
+
+});
+
+ </script>
+<a href="https://wa.me/917866062676"
+class="ai-btn"
+target="_blank">
+🤖
+</a>
+<div id="cursor-glow"></div>
 
 </body>
 </html>
